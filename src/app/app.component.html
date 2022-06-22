@@ -1,0 +1,26 @@
+
+<div>
+  <header>
+<h1>DAILY ROUTINE TASKS:</h1>
+
+<input type="text" class="inputtask" placeholder="ENTER NEW TASK..."  [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()" />
+
+</header>
+<main>
+
+<ul>
+ 
+  <li *ngFor="let todo of todos">
+    <h3>{{todo.id}}</h3>
+    <label> {{todo.title}} </label>
+    <p> {{todo.description}} </p>
+    <button >DELETE</button>
+    <button>EDIT</button>
+  </li>
+</ul>
+</main>
+
+</div>
+
+
+
