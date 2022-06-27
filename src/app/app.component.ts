@@ -8,22 +8,24 @@ import { Todo } from './model/todo';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todotasks';
-  todos: Todo[] = []
-  newTodo:Todo = new Todo()
-  constructor(private todoServiceService:TodoServiceService){}
+  newTodo: Todo = new Todo();
 
-  addTodo(){
-    this.todoServiceService.addTodo(this.newTodo)
-    this.newTodo = new Todo()
+  constructor(private todoDataService: TodoServiceService) {
   }
 
-  getTodos(){
-    let tasks = this.todoServiceService.getAllTodos()
-    return tasks 
+  addTodo() {
+    this.todoDataService.addTodo(this.newTodo);
+    this.newTodo = new Todo();
   }
 
-  deleteTodo(todo:any){
-    this.todoServiceService.deleteTodoById(todo.id)
+ 
+
+  removeTodo(todo:Todo) {
+    this.todoDataService.deleteTodoById(todo.id);
   }
+
+  get todos() {
+    return this.todoDataService.getAllTodos();
+  }
+
 }

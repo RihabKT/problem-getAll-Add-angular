@@ -18,5 +18,9 @@ constructor(values:Object={}){
 //         this.id=0;
 //         this.title = '';
 //         this.description = '';
-//       }
+      
+//       constructor(values:Object={}){
+//         Object.assign(this,values);
+//     }
+
 //     }

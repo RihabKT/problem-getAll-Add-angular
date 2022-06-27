@@ -1,26 +1,33 @@
 
+
 <div>
   <header>
 <h1>DAILY ROUTINE TASKS:</h1>
 
-<input type="text" class="inputtask" placeholder="ENTER NEW TASK..."  [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()" />
+<input type="text" class="inputtask" placeholder="ENTER NEW TASK..."  [(ngModel)]="newTodo.description" (keyup.enter)="addTodo()" />
 
 </header>
-<main>
 
-<ul>
+
+<section >
+
+<ul >
  
-  <li *ngFor="let todo of todos">
-    <h3>{{todo.id}}</h3>
-    <label> {{todo.title}} </label>
-    <p> {{todo.description}} </p>
-    <button >DELETE</button>
-    <button>EDIT</button>
+  <li *ngFor="let todo of todos" class="flexy-tasks"  >
+    <h3 class="task-id">{{todo.id}}</h3>
+   
+    <!-- <label class="task-title"> {{todo.title}} </label> -->
+    <p class="task-desc"> {{todo.description}} </p>
+    <button class="btn-remove" (click)=" removeTodo(todo)" >DELETE</button>
+    
+  
   </li>
 </ul>
-</main>
+</section>
 
-</div>
+<footer >
+  TASKS NUMBER {{todos.length}}
+</footer>
 
-
+</div> 
 
